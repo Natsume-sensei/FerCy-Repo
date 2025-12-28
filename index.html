@@ -22,7 +22,6 @@
     </script>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
     <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
@@ -34,6 +33,14 @@
         .dark .glass-nav {
             background: rgba(15, 23, 42, 0.9);
         }
+        /* Custom scrollbar for better UI */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { 
+            background: #cbd5e1; 
+            border-radius: 10px; 
+        }
+        .dark ::webkit-scrollbar-thumb { background: #334155; }
     </style>
 </head>
 <body class="bg-gray-50 text-slate-900 transition-colors duration-300 dark:bg-slate-900 dark:text-white">
@@ -43,7 +50,7 @@
             <div class="flex items-center justify-between h-16">
                 
                 <div class="flex items-center gap-8">
-                    <a href="#" onclick="navigate('')" class="flex items-center gap-2">
+                    <a href="#" onclick="window.location.hash=''" class="flex items-center gap-2">
                         <div class="bg-brand-blue p-2 rounded-lg text-white">
                            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
                         </div>
@@ -78,16 +85,16 @@
                      alt="FerCy Repository Background" 
                      class="absolute inset-0 w-full h-full object-cover">
                 
-                <div class="absolute inset-0 bg-gradient-to-b from-brand-blue/90 via-brand-blue/70 to-brand-blue/40 flex items-center justify-center">
-                    <div class="max-w-4xl mx-auto px-4 text-center text-white w-full mt-10">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Explore Academic Resources</h2>
-                        <p class="text-lg text-blue-100 mb-8">Discover thousands of research papers, theses, dissertations, and academic publications</p>
+                <div class="absolute inset-0 bg-gradient-to-b from-brand-blue/90 via-brand-blue/70 to-brand-blue/40 flex items-center justify-center text-white">
+                    <div class="max-w-4xl mx-auto px-4 text-center w-full mt-10">
+                        <h2 class="text-3xl md:text-5xl font-bold mb-4">Explore Academic Resources</h2>
+                        <p class="text-lg text-blue-100 mb-8">Discover thousands of research papers, theses, and digital books curated for excellence.</p>
                         
                         <div class="bg-white p-1 rounded-full shadow-lg flex items-center max-w-3xl mx-auto mb-8">
                             <div class="pl-6 text-gray-400">
                                 <i data-lucide="search" class="w-6 h-6"></i>
                             </div>
-                            <input type="text" placeholder="Search by title, author, keyword..." 
+                            <input type="text" placeholder="Search by title, author, DOI, or ISBN..." 
                                 class="w-full p-4 bg-transparent border-none text-gray-800 placeholder-gray-500 focus:outline-none text-lg rounded-full">
                             <button class="bg-brand-blue text-white px-8 py-4 rounded-full font-medium hover:bg-blue-700 transition-colors m-1">
                                 Search
@@ -96,8 +103,8 @@
 
                         <div class="flex flex-wrap justify-center gap-3">
                             <button class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-sm font-medium transition-colors border border-white/30">All Types</button>
-                            <button class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-sm font-medium transition-colors border border-white/30">Theses</button>
-                            <button class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-sm font-medium transition-colors border border-white/30">Dissertations</button>
+                            <button class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-sm font-medium transition-colors border border-white/30">Articles</button>
+                            <button class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-sm font-medium transition-colors border border-white/30">Books</button>
                             <button class="px-6 py-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm text-sm font-medium transition-colors border border-white/30">Research Papers</button>
                         </div>
                     </div>
@@ -109,22 +116,22 @@
                     <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-1 transition-transform">
                         <div class="bg-blue-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="file-text" class="w-8 h-8 text-brand-blue"></i></div>
                         <h3 class="text-3xl font-bold text-brand-blue mb-1">12,458</h3>
-                        <p class="text-gray-500 dark:text-gray-400">Documents</p>
+                        <p class="text-gray-500 dark:text-gray-400 font-medium">Documents</p>
                     </div>
                     <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-1 transition-transform">
                         <div class="bg-green-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="users" class="w-8 h-8 text-green-600"></i></div>
                         <h3 class="text-3xl font-bold text-green-600 mb-1">3,245</h3>
-                        <p class="text-gray-500 dark:text-gray-400">Authors</p>
+                        <p class="text-gray-500 dark:text-gray-400 font-medium">Authors</p>
                     </div>
                     <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-1 transition-transform">
                         <div class="bg-purple-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="book" class="w-8 h-8 text-purple-600"></i></div>
                         <h3 class="text-3xl font-bold text-purple-600 mb-1">156</h3>
-                        <p class="text-gray-500 dark:text-gray-400">Communities</p>
+                        <p class="text-gray-500 dark:text-gray-400 font-medium">Communities</p>
                     </div>
                      <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-1 transition-transform">
                         <div class="bg-orange-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="trending-up" class="w-8 h-8 text-orange-600"></i></div>
                         <h3 class="text-3xl font-bold text-orange-600 mb-1">45,892</h3>
-                        <p class="text-gray-500 dark:text-gray-400">Downloads</p>
+                        <p class="text-gray-500 dark:text-gray-400 font-medium">Downloads</p>
                     </div>
                 </div>
             </div>
@@ -132,15 +139,17 @@
 
         <div id="page-admin" class="hidden px-6 py-10">
             <div class="max-w-5xl mx-auto">
-                <div class="mb-8">
-                    <div class="inline-flex items-center gap-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-3 py-1 rounded-full text-xs font-bold mb-3">
-                        <i data-lucide="shield-alert" class="w-4 h-4"></i> RESTRICTED ACCESS AREA
+                <div class="mb-8 flex justify-between items-end">
+                    <div>
+                        <div class="inline-flex items-center gap-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-3 py-1 rounded-full text-xs font-bold mb-3 uppercase tracking-widest">
+                            <i data-lucide="shield-alert" class="w-4 h-4"></i> Restricted Admin Access
+                        </div>
+                        <h1 class="text-3xl font-bold text-slate-900 dark:text-white">FerCy Admin Studio</h1>
+                        <p class="text-gray-500 dark:text-gray-400 mt-1">Sistem manajemen metadata dan unggahan aset digital repository.</p>
                     </div>
-                    <h1 class="text-3xl font-bold text-slate-900 dark:text-white">FerCy Admin Studio</h1>
-                    <p class="text-gray-500 dark:text-gray-400 mt-1">Kelola metadata dan upload aset digital repository.</p>
                 </div>
 
-                <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-gray-100 dark:border-slate-700 overflow-hidden">
+                <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl border border-gray-100 dark:border-slate-700 overflow-hidden">
                     <div class="grid grid-cols-2 border-b border-gray-100 dark:border-slate-700 bg-gray-50/50 dark:bg-slate-900/50 p-2 gap-2">
                         <button onclick="setFormType('article')" id="tab-article" class="py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all bg-white dark:bg-slate-800 text-brand-blue shadow-sm">
                             <i data-lucide="file-text" class="w-5 h-5"></i> Jurnal Artikel
@@ -152,9 +161,10 @@
 
                     <form id="repoForm" class="p-8 space-y-8">
                         <input type="hidden" id="inputType" value="article">
+                        
                         <div>
                             <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4 flex items-center gap-2">
-                                <i data-lucide="info" class="w-4 h-4"></i> Informasi Dasar
+                                <i data-lucide="info" class="w-4 h-4"></i> Informasi Utama
                             </h3>
                             <div class="grid grid-cols-1 gap-5">
                                 <div>
@@ -163,11 +173,11 @@
                                 </div>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                     <div>
-                                        <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Penulis Utama</label>
+                                        <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Penulis / Kontributor</label>
                                         <input type="text" id="inputAuthor" required class="w-full p-3 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 focus:ring-2 focus:ring-brand-blue outline-none" placeholder="Nama Penulis">
                                     </div>
                                     <div>
-                                        <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Tahun Terbit</label>
+                                        <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">Tahun Publikasi</label>
                                         <input type="number" id="inputYear" required class="w-full p-3 rounded-xl bg-gray-50 dark:bg-slate-900 border border-gray-200 dark:border-slate-700 focus:ring-2 focus:ring-brand-blue outline-none" value="2025">
                                     </div>
                                 </div>
@@ -180,7 +190,7 @@
                             </h3>
                             <div id="fields-article" class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
-                                    <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">DOI (Wajib)</label>
+                                    <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">DOI (Digital Object Identifier)</label>
                                     <input type="text" id="inputDOI" class="w-full p-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 focus:ring-2 focus:ring-brand-blue outline-none font-mono text-sm" placeholder="10.xxxx/xxxxx">
                                 </div>
                                 <div>
@@ -189,14 +199,14 @@
                                 </div>
                             </div>
                             <div id="fields-book" class="hidden">
-                                <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">ISBN (Wajib)</label>
+                                <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">ISBN (International Standard Book Number)</label>
                                 <input type="text" id="inputISBN" class="w-full p-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 focus:ring-2 focus:ring-green-500 outline-none font-mono text-sm" placeholder="978-x-xx-xxxxxx-x">
                             </div>
                         </div>
 
                         <div>
                              <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4 flex items-center gap-2">
-                                <i data-lucide="paperclip" class="w-4 h-4"></i> Aset Digital
+                                <i data-lucide="paperclip" class="w-4 h-4"></i> Asset Digital (PDF)
                             </h3>
                             <div class="relative border-2 border-dashed border-gray-300 dark:border-slate-600 rounded-2xl p-8 text-center hover:border-brand-blue dark:hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-slate-700/30 transition-all cursor-pointer group">
                                 <input type="file" id="inputFile" accept=".pdf" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-10">
@@ -205,8 +215,8 @@
                                         <i data-lucide="upload-cloud" class="w-8 h-8"></i>
                                     </div>
                                     <div>
-                                        <p class="font-bold text-lg text-gray-700 dark:text-gray-200">Klik atau Tarik File PDF di sini</p>
-                                        <p class="text-sm text-gray-400 mt-1">Maksimum ukuran file 25MB.</p>
+                                        <p class="font-bold text-lg text-gray-700 dark:text-gray-200">Klik atau seret file PDF Anda ke sini</p>
+                                        <p class="text-sm text-gray-400 mt-1">Dokumen digital maksimal 25MB.</p>
                                     </div>
                                     <div id="fileNameDisplay" class="hidden mt-2 bg-brand-blue/10 text-brand-blue dark:text-blue-300 px-4 py-2 rounded-lg text-sm font-medium items-center gap-2">
                                        <i data-lucide="file-check" class="w-4 h-4"></i> <span id="fileNameText"></span>
@@ -216,7 +226,7 @@
                         </div>
 
                         <button type="submit" id="btnSubmit" class="w-full py-4 rounded-xl font-bold text-white text-lg bg-brand-blue hover:bg-blue-700 shadow-lg hover:shadow-blue-500/30 transition-all flex items-center justify-center gap-3 transform active:scale-[0.99]">
-                            <i data-lucide="save" class="w-6 h-6"></i> Simpan Data ke Repository
+                            <i data-lucide="save" class="w-6 h-6"></i> Unggah Data ke Repository
                         </button>
                     </form>
                 </div>
@@ -229,7 +239,8 @@
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
         import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-        // GANTI INI DENGAN DATA FIREBASE ASLI ANDA
+        // === KONFIGURASI FIREBASE ===
+        // Ganti dengan kredensial dari Firebase Console Anda agar bisa berfungsi secara real-time.
         const firebaseConfig = {
             apiKey: "ISI_API_KEY_ANDA",
             authDomain: "fercy-repo.firebaseapp.com",
@@ -239,19 +250,19 @@
             appId: "ISI_APP_ID"
         };
 
-        // Deteksi apakah Config sudah diisi user atau belum
         let isConfigured = false;
         let db, storage;
 
+        // Inisialisasi Firebase hanya jika API Key sudah diisi
         if (firebaseConfig.apiKey !== "ISI_API_KEY_ANDA") {
             try {
                 const app = initializeApp(firebaseConfig);
                 db = getFirestore(app);
                 storage = getStorage(app);
                 isConfigured = true;
-                console.log("Firebase Terhubung!");
+                console.log("🔥 Firebase Connected!");
             } catch (e) {
-                console.warn("Koneksi Firebase Gagal:", e);
+                console.error("Firebase Connection Error:", e);
             }
         }
 
@@ -261,40 +272,49 @@
         if(repoForm) {
             repoForm.addEventListener('submit', async (e) => {
                 e.preventDefault();
+                
+                // Animasi Loading
                 const originalBtnHtml = btnSubmit.innerHTML;
                 btnSubmit.innerHTML = `<i data-lucide="loader-2" class="animate-spin w-6 h-6"></i> Memproses...`;
                 btnSubmit.disabled = true;
                 lucide.createIcons();
 
                 try {
-                    // Validasi Input
                     const type = document.getElementById('inputType').value;
                     const title = document.getElementById('inputTitle').value;
                     const author = document.getElementById('inputAuthor').value;
                     const year = document.getElementById('inputYear').value;
                     const file = document.getElementById('inputFile').files[0];
 
-                    if (!title || !author || !year) throw new Error("Mohon lengkapi informasi dasar.");
-                    if (type === 'article' && !document.getElementById('inputDOI').value) throw new Error("DOI wajib diisi untuk artikel.");
-                    if (type === 'book' && !document.getElementById('inputISBN').value) throw new Error("ISBN wajib diisi untuk buku.");
+                    // Validasi Dasar
+                    if (!title || !author || !year) throw new Error("Lengkapi data judul, penulis, dan tahun.");
+                    if (!file) throw new Error("Silakan pilih file PDF yang akan diunggah.");
+                    
+                    if (type === 'article' && !document.getElementById('inputDOI').value) {
+                        throw new Error("DOI wajib diisi untuk kategori Jurnal Artikel.");
+                    }
+                    if (type === 'book' && !document.getElementById('inputISBN').value) {
+                        throw new Error("ISBN wajib diisi untuk kategori Buku Digital.");
+                    }
 
-                    // === LOGIC PENTING: Jika Firebase belum disetting, masuk Mode Simulasi ===
+                    // --- MODE SIMULASI ---
                     if (!isConfigured) {
-                        await new Promise(r => setTimeout(r, 2000)); // Pura-pura loading 2 detik
-                        alert(`[MODE SIMULASI] Sukses! Data '${title}' seolah-olah tersimpan.\n\nCatatan: Data tidak benar-benar tersimpan karena API Key Firebase belum diisi.`);
-                    } else {
-                        // Jika Firebase Aktif, Upload Beneran
-                        let fileDownloadUrl = null;
-                        if (file) {
-                            const storageRef = ref(storage, `repository_files/${type}s/${Date.now()}_${file.name}`);
-                            await uploadBytes(storageRef, file);
-                            fileDownloadUrl = await getDownloadURL(storageRef);
-                        }
+                        await new Promise(r => setTimeout(r, 2000));
+                        alert(`[MODE SIMULASI]\nBerhasil mengunggah: ${title}\n\nHubungkan API Key Firebase Anda untuk menyimpan data secara permanen.`);
+                    } 
+                    // --- MODE REAL-TIME (FIREBASE) ---
+                    else {
+                        // 1. Upload ke Storage
+                        const storageRef = ref(storage, `repository_files/${type}s/${Date.now()}_${file.name}`);
+                        await uploadBytes(storageRef, file);
+                        const fileDownloadUrl = await getDownloadURL(storageRef);
                         
+                        // 2. Simpan Metadata ke Firestore
                         const docData = {
-                            type, title, author, year: parseInt(year),
+                            type, title, author, 
+                            year: parseInt(year),
                             fileUrl: fileDownloadUrl,
-                            createdAt: serverTimestamp ? serverTimestamp() : new Date()
+                            createdAt: serverTimestamp()
                         };
 
                         if(type === 'article') {
@@ -305,16 +325,16 @@
                         }
 
                         await addDoc(collection(db, "fercy_repository_data"), docData);
-                        alert(`SUKSES! Data berhasil disimpan ke Database Firebase.`);
+                        alert(`SUKSES! Data '${title}' telah tersimpan di Cloud Firebase.`);
                     }
                     
-                    // Reset Form setelah sukses (baik simulasi maupun beneran)
+                    // Cleanup Form
                     repoForm.reset();
                     resetFileInputUI();
                     setFormType('article'); 
 
                 } catch (error) {
-                    alert("GAGAL: " + error.message);
+                    alert("⚠️ ERROR: " + error.message);
                 } finally {
                     btnSubmit.innerHTML = originalBtnHtml;
                     btnSubmit.disabled = false;
@@ -327,7 +347,7 @@
     <script>
         lucide.createIcons();
 
-        // Dark Mode Logic
+        // 1. Theme Logic
         if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             document.getElementById('icon-sun').classList.remove('hidden');
@@ -341,7 +361,7 @@
             document.getElementById('icon-moon').classList.toggle('hidden', isDark);
         }
 
-        // Routing Rahasia
+        // 2. Secret Routing Logic
         function checkRoute() {
             const hash = window.location.hash;
             const homePage = document.getElementById('page-home');
@@ -359,7 +379,7 @@
         window.addEventListener('load', checkRoute);
         window.addEventListener('hashchange', checkRoute);
 
-        // UI Helpers
+        // 3. File Input UI Helper
         const inputFile = document.getElementById('inputFile');
         const fileNameDisplay = document.getElementById('fileNameDisplay');
         const fileNameText = document.getElementById('fileNameText');
@@ -380,6 +400,7 @@
             fileNameText.textContent = '';
         }
 
+        // 4. Admin Form Switcher (Article vs Book)
         function setFormType(type) {
             document.getElementById('inputType').value = type;
             const tabArticle = document.getElementById('tab-article');
@@ -387,9 +408,9 @@
             const condArea = document.getElementById('conditional-area');
             const condTitle = document.getElementById('cond-title');
             
-            const inactive = "text-gray-500 hover:bg-white/50 dark:hover:bg-slate-800/50 bg-transparent shadow-none";
-            tabArticle.className = `py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all ${inactive}`;
-            tabBook.className = `py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all ${inactive}`;
+            const inactiveStyle = "text-gray-500 hover:bg-white/50 dark:hover:bg-slate-800/50 bg-transparent shadow-none";
+            tabArticle.className = `py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all ${inactiveStyle}`;
+            tabBook.className = `py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all ${inactiveStyle}`;
 
             if (type === 'article') {
                 tabArticle.className = "py-3 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all bg-white dark:bg-slate-800 text-brand-blue shadow-sm";
