@@ -27,7 +27,6 @@
 
     <style>
         body { font-family: 'Inter', sans-serif; }
-        /* Efek Glassmorphism halus untuk navbar */
         .glass-nav {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -62,12 +61,10 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-all text-gray-600 dark:text-gray-300">
+                    <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-slate-800 transition-all text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-slate-700">
                         <i data-lucide="sun" id="icon-sun" class="w-5 h-5 hidden"></i>
                         <i data-lucide="moon" id="icon-moon" class="w-5 h-5"></i>
                     </button>
-                    <a href="#" class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-blue">Sign In</a>
-                    <a href="#" class="bg-brand-blue text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">Submit Work</a>
                 </div>
             </div>
         </div>
@@ -77,14 +74,12 @@
         
         <div id="page-home">
             <div class="relative w-full h-[600px] overflow-hidden">
-                
                 <img src="https://media.pixverse.ai/pixverse%2Ft2i%2Fori%2F2891c1bd-87b7-47b5-8112-083b65f67751.jpg" 
                      alt="FerCy Repository Background" 
                      class="absolute inset-0 w-full h-full object-cover">
                 
                 <div class="absolute inset-0 bg-gradient-to-b from-brand-blue/90 via-brand-blue/70 to-brand-blue/40 flex items-center justify-center">
                     <div class="max-w-4xl mx-auto px-4 text-center text-white w-full mt-10">
-                        
                         <h2 class="text-3xl md:text-4xl font-bold mb-4">Explore Academic Resources</h2>
                         <p class="text-lg text-blue-100 mb-8">Discover thousands of research papers, theses, dissertations, and academic publications</p>
                         
@@ -112,30 +107,22 @@
             <div class="max-w-7xl mx-auto px-6 -mt-16 relative z-10 pb-20">
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-1 transition-transform">
-                        <div class="bg-blue-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <i data-lucide="file-text" class="w-8 h-8 text-brand-blue"></i>
-                        </div>
+                        <div class="bg-blue-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="file-text" class="w-8 h-8 text-brand-blue"></i></div>
                         <h3 class="text-3xl font-bold text-brand-blue mb-1">12,458</h3>
                         <p class="text-gray-500 dark:text-gray-400">Documents</p>
                     </div>
                     <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-1 transition-transform">
-                        <div class="bg-green-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                             <i data-lucide="users" class="w-8 h-8 text-green-600"></i>
-                        </div>
+                        <div class="bg-green-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="users" class="w-8 h-8 text-green-600"></i></div>
                         <h3 class="text-3xl font-bold text-green-600 mb-1">3,245</h3>
                         <p class="text-gray-500 dark:text-gray-400">Authors</p>
                     </div>
                     <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-1 transition-transform">
-                        <div class="bg-purple-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                             <i data-lucide="book" class="w-8 h-8 text-purple-600"></i>
-                        </div>
+                        <div class="bg-purple-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="book" class="w-8 h-8 text-purple-600"></i></div>
                         <h3 class="text-3xl font-bold text-purple-600 mb-1">156</h3>
                         <p class="text-gray-500 dark:text-gray-400">Communities</p>
                     </div>
                      <div class="bg-white dark:bg-slate-800 rounded-xl shadow-sm p-6 text-center border border-gray-100 dark:border-slate-700 hover:-translate-y-1 transition-transform">
-                        <div class="bg-orange-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                             <i data-lucide="trending-up" class="w-8 h-8 text-orange-600"></i>
-                        </div>
+                        <div class="bg-orange-50 dark:bg-slate-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="trending-up" class="w-8 h-8 text-orange-600"></i></div>
                         <h3 class="text-3xl font-bold text-orange-600 mb-1">45,892</h3>
                         <p class="text-gray-500 dark:text-gray-400">Downloads</p>
                     </div>
@@ -165,7 +152,6 @@
 
                     <form id="repoForm" class="p-8 space-y-8">
                         <input type="hidden" id="inputType" value="article">
-
                         <div>
                             <h3 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4 flex items-center gap-2">
                                 <i data-lucide="info" class="w-4 h-4"></i> Informasi Dasar
@@ -192,7 +178,6 @@
                             <h3 class="text-sm font-bold uppercase tracking-wider mb-4 flex items-center gap-2 text-brand-blue dark:text-blue-400" id="cond-title">
                                 <i data-lucide="tag" class="w-4 h-4"></i> Metadata Artikel
                             </h3>
-                            
                             <div id="fields-article" class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
                                     <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">DOI (Wajib)</label>
@@ -203,7 +188,6 @@
                                     <input type="text" id="inputISSN" class="w-full p-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 focus:ring-2 focus:ring-brand-blue outline-none font-mono text-sm" placeholder="xxxx-xxxx">
                                 </div>
                             </div>
-
                             <div id="fields-book" class="hidden">
                                 <label class="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">ISBN (Wajib)</label>
                                 <input type="text" id="inputISBN" class="w-full p-3 rounded-xl bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 focus:ring-2 focus:ring-green-500 outline-none font-mono text-sm" placeholder="978-x-xx-xxxxxx-x">
@@ -238,7 +222,6 @@
                 </div>
             </div>
         </div>
-
     </main>
 
     <script type="module">
@@ -246,7 +229,7 @@
         import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
         import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-storage.js";
 
-        // GANTI API KEY DI SINI
+        // GANTI INI DENGAN DATA FIREBASE ASLI ANDA
         const firebaseConfig = {
             apiKey: "ISI_API_KEY_ANDA",
             authDomain: "fercy-repo.firebaseapp.com",
@@ -256,13 +239,20 @@
             appId: "ISI_APP_ID"
         };
 
+        // Deteksi apakah Config sudah diisi user atau belum
+        let isConfigured = false;
         let db, storage;
-        try {
-            const app = initializeApp(firebaseConfig);
-            db = getFirestore(app);
-            storage = getStorage(app);
-        } catch (e) {
-            console.warn("Firebase belum dikonfigurasi. Mode Simulasi.");
+
+        if (firebaseConfig.apiKey !== "ISI_API_KEY_ANDA") {
+            try {
+                const app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+                storage = getStorage(app);
+                isConfigured = true;
+                console.log("Firebase Terhubung!");
+            } catch (e) {
+                console.warn("Koneksi Firebase Gagal:", e);
+            }
         }
 
         const repoForm = document.getElementById('repoForm');
@@ -277,6 +267,7 @@
                 lucide.createIcons();
 
                 try {
+                    // Validasi Input
                     const type = document.getElementById('inputType').value;
                     const title = document.getElementById('inputTitle').value;
                     const author = document.getElementById('inputAuthor').value;
@@ -287,31 +278,37 @@
                     if (type === 'article' && !document.getElementById('inputDOI').value) throw new Error("DOI wajib diisi untuk artikel.");
                     if (type === 'book' && !document.getElementById('inputISBN').value) throw new Error("ISBN wajib diisi untuk buku.");
 
-                    let fileDownloadUrl = null;
-                    if (storage && file) {
-                        const storageRef = ref(storage, `repository_files/${type}s/${Date.now()}_${file.name}`);
-                        await uploadBytes(storageRef, file);
-                        fileDownloadUrl = await getDownloadURL(storageRef);
+                    // === LOGIC PENTING: Jika Firebase belum disetting, masuk Mode Simulasi ===
+                    if (!isConfigured) {
+                        await new Promise(r => setTimeout(r, 2000)); // Pura-pura loading 2 detik
+                        alert(`[MODE SIMULASI] Sukses! Data '${title}' seolah-olah tersimpan.\n\nCatatan: Data tidak benar-benar tersimpan karena API Key Firebase belum diisi.`);
                     } else {
-                        await new Promise(r => setTimeout(r, 2000)); // Simulasi
+                        // Jika Firebase Aktif, Upload Beneran
+                        let fileDownloadUrl = null;
+                        if (file) {
+                            const storageRef = ref(storage, `repository_files/${type}s/${Date.now()}_${file.name}`);
+                            await uploadBytes(storageRef, file);
+                            fileDownloadUrl = await getDownloadURL(storageRef);
+                        }
+                        
+                        const docData = {
+                            type, title, author, year: parseInt(year),
+                            fileUrl: fileDownloadUrl,
+                            createdAt: serverTimestamp ? serverTimestamp() : new Date()
+                        };
+
+                        if(type === 'article') {
+                            docData.doi = document.getElementById('inputDOI').value;
+                            docData.issn = document.getElementById('inputISSN').value || null;
+                        } else {
+                            docData.isbn = document.getElementById('inputISBN').value;
+                        }
+
+                        await addDoc(collection(db, "fercy_repository_data"), docData);
+                        alert(`SUKSES! Data berhasil disimpan ke Database Firebase.`);
                     }
-
-                    const docData = {
-                        type, title, author, year: parseInt(year),
-                        fileUrl: fileDownloadUrl,
-                        createdAt: serverTimestamp ? serverTimestamp() : new Date()
-                    };
-
-                    if(type === 'article') {
-                        docData.doi = document.getElementById('inputDOI').value;
-                        docData.issn = document.getElementById('inputISSN').value || null;
-                    } else {
-                        docData.isbn = document.getElementById('inputISBN').value;
-                    }
-
-                    if (db) await addDoc(collection(db, "fercy_repository_data"), docData);
                     
-                    alert(`SUKSES! Data ${type === 'article' ? 'Artikel' : 'Buku'} tersimpan.`);
+                    // Reset Form setelah sukses (baik simulasi maupun beneran)
                     repoForm.reset();
                     resetFileInputUI();
                     setFormType('article'); 
@@ -330,7 +327,7 @@
     <script>
         lucide.createIcons();
 
-        // Dark Mode
+        // Dark Mode Logic
         if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             document.getElementById('icon-sun').classList.remove('hidden');
@@ -344,7 +341,7 @@
             document.getElementById('icon-moon').classList.toggle('hidden', isDark);
         }
 
-        // Routing Rahasia: #fercy-secret-admin
+        // Routing Rahasia
         function checkRoute() {
             const hash = window.location.hash;
             const homePage = document.getElementById('page-home');
@@ -362,7 +359,7 @@
         window.addEventListener('load', checkRoute);
         window.addEventListener('hashchange', checkRoute);
 
-        // Logic Input File
+        // UI Helpers
         const inputFile = document.getElementById('inputFile');
         const fileNameDisplay = document.getElementById('fileNameDisplay');
         const fileNameText = document.getElementById('fileNameText');
